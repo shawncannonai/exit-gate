@@ -1,0 +1,8 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [{"type": "command", "command": "python3 -m exitgate start"}]}
+    ]
+  },
+  "statusLine": {"type": "command", "command": "python3 -m exitgate --cached"}
+}

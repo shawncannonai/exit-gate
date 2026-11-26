@@ -1,0 +1,15 @@
+{
+  "handoff": "HANDOFF.md",
+  "state_dir": "state",
+  "scratch_dir": "scratch",
+  "check": [
+    {"type": "git_dirty", "repos": ["."], "unpushed": true},
+    {"type": "scratch_unrun"},
+    {"type": "handoff", "watch": ["."]},
+    {"type": "jsonl_open", "path": "corrections.jsonl", "label": "open correction"},
+    {"type": "command", "label": "tests", "run": "python3 -m unittest discover -s tests -q", "kind": "session",
+     "timeout": 300},
+    {"type": "command", "label": "failed services", "kind": "system",
+     "run": "systemctl --failed --quiet --no-legend | grep -q . && exit 1 || exit 0"}
+  ]
+}

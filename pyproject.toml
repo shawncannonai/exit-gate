@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exit-gate"
+version = "0.1.0"
+description = "Can this AI coding session be closed without losing anything? Session vs system leaks, pluggable checks, handoff notes, and a one-off script bin."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+exitgate = "exitgate.__main__:main"
+scratch = "exitgate.scratch:main"
+
+[tool.setuptools]
+packages = ["exitgate"]
